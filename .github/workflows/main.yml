@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: npm build
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          switches: -avzr --delete
+          path: /build
+          remote_path: /home/${{ secrets.UBERSPACE_USER }}/html/pillnitz-stundenplan/
+          remote_host: ${{ secrets.UBERSPACE_HOST }}
+          remote_user: ${{ secrets.UBERSPACE_USER }}
+          remote_key: ${{ secrets.DEPLOY_KEY_PRIVATE }}
