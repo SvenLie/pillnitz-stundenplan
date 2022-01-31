@@ -61,7 +61,7 @@ const Home = () => {
                 <>
                     <FloatingLabel
                         controlId="floatingGroup"
-                        label="Gruppe (optional)"
+                        label="Gruppe (optional, nur Bachelor)"
                         className="mb-3"
                     >
                         <Form.Control type="number" placeholder="Gruppe"/>
