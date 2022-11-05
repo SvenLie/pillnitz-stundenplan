@@ -16,7 +16,7 @@ const Home = () => {
         const courseSelectElement = document.getElementById("course") as HTMLSelectElement
         const groupInputElement = document.getElementById("floatingGroup") as HTMLInputElement
         const linkElement = document.getElementById("link") as HTMLAnchorElement
-        let link = "https://api.sven-liebert.de/htw-dresden/pillnitz/timetable-ical/"
+        let link = "https://api.svenliebert.de/htw-dresden/pillnitz/timetable-ical/"
 
         if (courseSelectElement && courseSelectElement.value) {
             link += courseSelectElement.value
@@ -83,7 +83,7 @@ const Home = () => {
                 </ul>
             </div>
             <p className="hidden">Link für das Kalenderabonnement: <a
-                href="https://api.sven-liebert.de" id="link">https://api.sven-liebert.de</a></p>
+                href="https://api.svenliebert.de" id="link">https://api.svenliebert.de</a></p>
         </div>
     )
 }
