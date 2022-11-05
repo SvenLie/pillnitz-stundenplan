@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.scss';
-import {BrowserRouter, NavLink, Switch, Route, Redirect} from "react-router-dom";
+import {HashRouter, NavLink, Switch, Route, Redirect} from "react-router-dom";
 import Impressum from "./Impressum"
 import Datenschutz from "./Datenschutz"
 import Home from "./Home"
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <div>
                 <nav>
                     <ul className="navigation">
@@ -24,20 +24,20 @@ function App() {
                 </nav>
                 <Switch>
                     <Route path="/datenschutz">
-                        <Datenschutz />
+                        <Datenschutz/>
                     </Route>
                     <Route path="/impressum">
-                        <Impressum />
+                        <Impressum/>
                     </Route>
                     <Route path="/home">
-                        <Home />
+                        <Home/>
                     </Route>
                     <Route exact path="/">
                         <Redirect to={{pathname: "/home"}}/>
                     </Route>
                 </Switch>
             </div>
-        </BrowserRouter>
+        </HashRouter>
 
 
     );
