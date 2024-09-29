@@ -14,7 +14,7 @@ const Home = () => {
                     <div className="card">
                         <div className="card-body">
                             <h5 className="card-title">Stundenplan HTW Dresden</h5>
-                            <p className="card-text">Dieser Generator ist für Studierende, welche nicht der Fakultät Landbau/Umwelt/Chemie angehören und deren Stundenplan <a href="https://www.htw-dresden.de/studium/im-studium/aktuelle-stunden-und-raumplaene" target="_blank">hier</a> zu finden ist.</p>
+                            <p className="card-text">Dieser Generator ist für Studierende, welche nicht der Fakultät Landbau/Umwelt/Chemie angehören und deren Stundenplan <a href="https://www.htw-dresden.de/studium/im-studium/aktuelle-stunden-und-raumplaene" rel="noreferrer" target="_blank">hier</a> zu finden ist.</p>
                             <NavLink className="btn btn-primary" to="/campus">Zur Kalendergenerierung für HTW Stundenplan</NavLink>
                         </div>
                     </div>
@@ -23,7 +23,7 @@ const Home = () => {
                     <div className="card">
                         <div className="card-body">
                             <h5 className="card-title">Stundenplan HTW Dresden Pillnitz</h5>
-                            <p className="card-text">Dieser Generator ist für Studierende, welche zur Fakultät Landbau/Umwelt/Chemie angehören und deren Stundenplan <a href="https://www2.htw-dresden.de/~stpill/stuplan/raiplan_pill.cgi" target="_blank">hier</a> zu finden ist.</p>
+                            <p className="card-text">Dieser Generator ist für Studierende, welche zur Fakultät Landbau/Umwelt/Chemie angehören und deren Stundenplan <a href="https://www2.htw-dresden.de/~stpill/stuplan/raiplan_pill.cgi" rel="noreferrer" target="_blank">hier</a> zu finden ist.</p>
                             <NavLink className="btn btn-primary" to="/pillnitz">Zur Kalendergenerierung für für Pillnitzer Stundenplan</NavLink>
                         </div>
                     </div>
