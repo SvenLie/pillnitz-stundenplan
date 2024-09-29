@@ -48,7 +48,7 @@ const Datenschutz = () => {
             insoweit verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten erforderlich ist und
             unsere Weisungen in Bezug auf diese Daten befolgen.</p> <p>Wir setzen folgenden Hoster
             ein:</p>
-            <p>uberspace.de</p>
+            <p>hetzner.de</p>
             <h5>3. Allgemeine Hinweise und Pflichtinformationen</h5>
             <h6>Datenschutz</h6> <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen
             Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend

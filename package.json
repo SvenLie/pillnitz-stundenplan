@@ -1,5 +1,5 @@
 {
-  "name": "pillnitz-stundenplan",
+  "name": "htw-dresden-stundenplan",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,14 +9,14 @@
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.37",
     "@types/react": "^17.0.35",
-    "@types/react-dom": "^17.0.11",
+    "@types/react-dom": "^18.3.0",
     "@types/react-router-dom": "^5.1.7",
     "bootstrap": "^5.1.3",
-    "react": "^17.0.2",
+    "react": "^18.3.1",
     "react-bootstrap": "^2.1.1",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.3.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "sass": "^1.32.11",
     "typescript": "^4.5.2",
     "web-vitals": "^1.1.2"

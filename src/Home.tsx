@@ -1,89 +1,34 @@
-import React, {useEffect} from 'react';
-import {useCourseList} from "./useCourseList";
-import {Form, FloatingLabel, Button} from "react-bootstrap";
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {NavLink} from "react-router-dom";
 
 const Home = () => {
-    const {courses, fetchCourseList} = useCourseList()
-
-    useEffect(() => {
-        fetchCourseList()
-    }, [fetchCourseList])
-
-    const handleSubmit = (event: any) => {
-
-
-        const courseSelectElement = document.getElementById("course") as HTMLSelectElement
-        const groupInputElement = document.getElementById("floatingGroup") as HTMLInputElement
-        const linkElement = document.getElementById("link") as HTMLAnchorElement
-        let link = "https://api.svenliebert.de/htw-dresden/pillnitz/timetable-ical/"
-
-        if (courseSelectElement && courseSelectElement.value) {
-            link += courseSelectElement.value
-        } else {
-            event.preventDefault()
-            event.stopPropagation()
-            return
-        }
-
-
-        if (groupInputElement && groupInputElement.value) {
-            link += "?group=" + groupInputElement.value
-        }
-
-
-        if (linkElement && link) {
-            linkElement.setAttribute("href", link)
-            linkElement.innerText = link
-
-            if (linkElement.parentElement) {
-                linkElement.parentElement.classList.remove('hidden')
-            }
-        }
-
-        linkElement.scrollIntoView()
-        event.preventDefault()
-        event.stopPropagation()
-    }
-
     return (
         <div className="App-content">
-            <br/>
-            <h4>Kalendergenerator für Studiengänge der HTW Dresden am Standort Pillnitz</h4>
-            <br/>
-            <Form onSubmit={handleSubmit}>
-                <Form.Select id="course" required>
-                    <option value="">Bitte wählen...</option>
-                    {courses.map(course => <option key={course.id}
-                                                   value={course.id}>{course.description}</option>)}
-                </Form.Select>
-                <br/>
-                <>
-                    <FloatingLabel
-                        controlId="floatingGroup"
-                        label="Gruppe (optional, nur Bachelor)"
-                        className="mb-3"
-                    >
-                        <Form.Control type="number" placeholder="Gruppe"/>
-                    </FloatingLabel>
-                </>
-                <Button type="submit">Kalender generieren</Button>
-            </Form>
-            <br/>
-            <div className="result">
-                <p>Anleitung für:</p>
-                <ul>
-                    <li><a href="https://support.apple.com/de-de/guide/iphone/iph3d1110d4/ios"
-                           rel="noreferrer" target="_blank">iOS (Abschnitt "Kalender abonnieren" mit der
-                        URL oben)</a></li>
-                    <li><a
-                        href="https://support.google.com/calendar/answer/37100?hl=de&co=GENIE.Platform%3DDesktop&oco=1"
-                        rel="noreferrer" target="_blank">Android (Abschnitt "Öffentlichen Kalender über
-                        einen Link hinzufügen")</a></li>
-                </ul>
+            <h1>
+                Kalendergenerator für Stundenpläne der HTW Dresden
+            </h1>
+            <p>Diese Anwendung ermöglicht es, den Kalender der HTW Dresden und den eigenständigen Kalender des Standortes Pillnitz in einer beliebigen Kalenderapp als Kalenderabonnement einzubinden. Dadurch tauchen Veränderungen am Stundenplan direkt im eigenen Kalender auf.</p>
+            <div className="row row-cols-1 row-cols-md-2 g-4">
+                <div className="col">
+                    <div className="card">
+                        <div className="card-body">
+                            <h5 className="card-title">Stundenplan HTW Dresden</h5>
+                            <p className="card-text">Dieser Generator ist für Studierende, welche nicht der Fakultät Landbau/Umwelt/Chemie angehören und deren Stundenplan <a href="https://www.htw-dresden.de/studium/im-studium/aktuelle-stunden-und-raumplaene" target="_blank">hier</a> zu finden ist.</p>
+                            <NavLink className="btn btn-primary" to="/campus">Zur Kalendergenerierung für HTW Stundenplan</NavLink>
+                        </div>
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="card">
+                        <div className="card-body">
+                            <h5 className="card-title">Stundenplan HTW Dresden Pillnitz</h5>
+                            <p className="card-text">Dieser Generator ist für Studierende, welche zur Fakultät Landbau/Umwelt/Chemie angehören und deren Stundenplan <a href="https://www2.htw-dresden.de/~stpill/stuplan/raiplan_pill.cgi" target="_blank">hier</a> zu finden ist.</p>
+                            <NavLink className="btn btn-primary" to="/pillnitz">Zur Kalendergenerierung für für Pillnitzer Stundenplan</NavLink>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p className="hidden">Link für das Kalenderabonnement: <a
-                href="https://api.svenliebert.de" id="link">https://api.svenliebert.de</a></p>
         </div>
     )
 }
