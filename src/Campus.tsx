@@ -13,6 +13,9 @@ const Campus = () => {
         fetchModuleList(studentNumberInputElement.value)
 
         createCalendarFormElement.classList.remove('hidden')
+
+        event.preventDefault()
+        event.stopPropagation()
     }
 
     const ignoreModuleChange = (event: any) => {
